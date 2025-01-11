@@ -277,7 +277,6 @@ a:visited {
     margin: 0; /* Remove default margin */
 }
 .certificate-item:hover{
-    transform: scale(1.05);
     background: #28a745;
 }
 #education {
@@ -322,7 +321,7 @@ a:visited {
     padding: 10px 15px; /* Padding around the heading */
     margin-bottom: 20px; /* Space below the heading */
     display: flex; /* Use flexbox for layout */
-    /*justify-content: center; /* Center the heading text */
+    justify-content: center; /* Center the heading text */
     color: white;
 }
 
@@ -368,7 +367,18 @@ a:visited {
 }
 
 .github a:hover{
-    background-color: #007bff; /* Example: a different color for the link hover */
+    background-color: #0a0a0a; /* Example: a different color for the link hover */
+}
+.certificate_link{
+    color: white;
+    text-decoration: none; /* Remove underline from link */
+    display: inline-block; /* Make the link behave like an inline block */
+    padding: 12px; /* Add some padding to make it easier to click */
+    border-radius: 4px; /* Add some border-radius */
+    transition: background-color 0.3s ease; /* Add smooth transitions */
+}
+.certificate_link a:hover{
+    background-color: #0a0a0a; /* Example: a different color for the link hover */
 }
 #profile{
     background: #4f5152;
@@ -492,7 +502,7 @@ a:visited {
     justify-content: center; /* Center the heading text */
     color: white;
 }
-.ETL{
+.Visualization{
     width: 100%; /* Make the heading take the full width */
     background: grey; /* Background color for the heading */
     padding: 10px 15px; /* Padding around the heading */
@@ -501,7 +511,7 @@ a:visited {
     justify-content: center; /* Center the heading text */
     color: white;
 }
-.Timeseries{
+.Technical_support{
     width: 100%; /* Make the heading take the full width */
     background: grey; /* Background color for the heading */
     padding: 10px 15px; /* Padding around the heading */
@@ -511,15 +521,6 @@ a:visited {
     color: white;
 }
 .deeplearning{
-    width: 100%; /* Make the heading take the full width */
-    background: grey; /* Background color for the heading */
-    padding: 10px 15px; /* Padding around the heading */
-    margin-bottom: 20px; /* Space below the heading */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center the heading text */
-    color: white;
-}
-.IT_Help_Desk{
     width: 100%; /* Make the heading take the full width */
     background: grey; /* Background color for the heading */
     padding: 10px 15px; /* Padding around the heading */
