@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit Card Fraud Detection</title>
-    <style>
+     <style>
           body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -166,8 +166,8 @@
     </style>
 </head>
 <body>
-     <div class="section">
-        <h1>Credit Card Fraud Detection</h1>
+    <div class="section">
+         <h1>Credit Card Fraud Detection</h1>
          <h2>Project Overview</h2>
         <p>This project focuses on building a machine learning model to detect fraudulent credit card transactions. The project includes data preprocessing, exploratory data analysis, model training, hyperparameter tuning, and evaluation steps. A random forest classifier is used in this project to make predictions.</p>
     </div>
@@ -177,53 +177,55 @@
         <ul>
             <li><strong>Data Handling:</strong>
                 <ul>
-                   <li>Loads the dataset, explores its structure, and understands features.</li>
-                   <li>Checks for missing values and descriptive statistics.</li>
-                 </ul>
+                    <li>Loads the credit card transaction dataset.</li>
+                    <li>Explores the dataset's structure and features.</li>
+                    <li>Checks for any missing values and calculates descriptive statistics.</li>
+                </ul>
             </li>
             <li><strong>Data Preprocessing:</strong>
                 <ul>
-                     <li>Converts the time variable into a day format.</li>
-                     <li>Performs data transformation of the features.</li>
-                     <li>Implements undersampling to balance the skewed data.</li>
+                     <li>Converts the 'Time' feature to a day-based representation.</li>
+                    <li>Applies necessary feature transformations for model compatibility.</li>
+                    <li>Implements undersampling techniques to balance the class distribution.</li>
                  </ul>
            </li>
            <li><strong>Model Training and Evaluation:</strong>
               <ul>
-                <li>Splits the dataset into training and testing sets.</li>
-                 <li>Trains, evaluates, and compares various models like logistic regression, decision tree, random forest, svm and k nearest neighbours.</li>
-                   <li>Selects the Random forest model as the main model.</li>
+                   <li>Splits the data into training and testing sets.</li>
+                    <li>Trains and evaluates multiple models, including Logistic Regression, Decision Tree, Random Forest, SVM, and KNN.</li>
+                     <li>Selects the Random Forest model as the primary model.</li>
                 </ul>
             </li>
-            <li><strong>Model Optimization and Validation:</strong>
+             <li><strong>Model Tuning and Validation:</strong>
                <ul>
-                   <li>Uses GridSearchCV to tune the parameters of Random Forest model.</li>
-                   <li>Tests the performance of the model using metrics like precision, recall, f1-score and ROC curve and confusion matrix.</li>
-               </ul>
-            </li>
-            <li><strong>Random Data and Prediction:</strong>
-                <ul>
-                    <li>Generates random data and makes predictions.</li>
-                   <li>Stores the predicted data in an excel sheet.</li>
-                   </ul>
-            </li>
-            <li><strong>Pipeline Creation:</strong>
-                <ul>
-                    <li>Creates a pipeline for scaling the data and prediction.</li>
+                    <li>Optimizes the Random Forest model's hyperparameters using GridSearchCV.</li>
+                     <li>Evaluates the final model's performance with precision, recall, F1-score, ROC curve and confusion matrix.</li>
                 </ul>
-           </li>
+            </li>
+            <li><strong>Random Data Generation and Prediction:</strong>
+                 <ul>
+                    <li>Implements a function to generate random transaction data and make predictions using the model.</li>
+                    <li>Saves the predicted data in an Excel sheet for review.</li>
+                 </ul>
+             </li>
+            <li><strong>Pipeline Creation:</strong>
+               <ul>
+                   <li>Creates a streamlined pipeline for scaling the data and making predictions efficiently.</li>
+                </ul>
+            </li>
         </ul>
     </div>
-     <div class="section">
+    
+    <div class="section">
         <h2>Uses</h2>
-        <div class="uses-container">
-           <div class="use-box">Data Cleaning</div>
-           <div class="use-box">Feature Engineering</div>
-           <div class="use-box">Model Training</div>
-             <div class="use-box">Model Evaluation</div>
+         <div class="uses-container">
+            <div class="use-box">Data Cleaning</div>
+            <div class="use-box">Feature Engineering</div>
+            <div class="use-box">Model Training</div>
+            <div class="use-box">Model Evaluation</div>
             <div class="use-box">Data Balancing</div>
-             <div class="use-box">Grid Search</div>
-             <div class="use-box">Pipeline Creation</div>
+            <div class="use-box">Grid Search</div>
+            <div class="use-box">Pipeline Creation</div>
              <div class="use-box">Data Analysis</div>
             <div class="use-box">Fraud Detection</div>
             <div class="use-box">Data Prediction</div>
@@ -239,67 +241,67 @@
             <li>
                 <strong>Libraries/Modules Used:</strong>
                <ul>
-                 <li><code>pandas</code>: Used for data manipulation and analysis, particularly with DataFrames.</li>
-                 <li><code>numpy</code>: Used for numerical computations and handling NaN values.</li>
-                 <li><code>scikit-learn</code>: Used for model training, evaluation, and pipeline creation.</li>
-                   <li><code>imbalanced-learn</code>: Used for balancing the imbalanced dataset</li>
-                   <li><code>openpyxl</code>: Used for creating and writing to Excel files.</li>
+                 <li><code>pandas</code>: For data manipulation and analysis.</li>
+                 <li><code>numpy</code>: For numerical computations.</li>
+                 <li><code>scikit-learn</code>: For model training, evaluation, and pipeline creation.</li>
+                 <li><code>imbalanced-learn</code>: For handling imbalanced datasets.</li>
+                 <li><code>openpyxl</code>: For working with Excel files.</li>
                 </ul>
             </li>
             <li>
-                 <strong>Data Storage:</strong> CSV (`creditcard.csv`), Excel Sheet
+                 <strong>Data Storage:</strong> CSV (`creditcard.csv`), Excel Sheet.
              </li>
              <li>
-                <strong>Output:</strong> Trained model, model performance metrics, Excel sheet containing the random data and predicted output.
+                <strong>Output:</strong> Trained model, performance metrics, predicted data in Excel.
             </li>
         </ul>
     </div>
 
-     <div class="section instructions-container">
+    <div class="section instructions-container">
         <h3>How to Use</h3>
         <ol>
-             <li><strong>Install Required Libraries:</strong>
-                <p>Make sure you have all the necessary libraries installed. You can install them using pip:</p>
-                 <pre><code>pip install pandas numpy scikit-learn imbalanced-learn openpyxl</code></pre>
-             </li>
-             <li><strong>Prepare the Data:</strong>
-               <p>Ensure the CSV data file (`creditcard.csv`) is in the same directory as your Python script or provide the correct file path.</p>
+            <li><strong>Install Required Libraries:</strong>
+                <p>Ensure you have all the necessary libraries installed. Use pip to install them:</p>
+                <pre><code>pip install pandas numpy scikit-learn imbalanced-learn openpyxl</code></pre>
             </li>
-             <li><strong>Run the Script:</strong>
-                <p>Execute the Python script or Jupyter Notebook containing the provided code.</p>
-             </li>
-            <li><strong>Review the Output:</strong>
-                 <p>Review the generated metrics for model performance and the output excel sheet which has the random generated data and prediction</p>
+            <li><strong>Prepare the Data:</strong>
+                <p>Place the CSV data file (`creditcard.csv`) in the same directory as your Python script or specify the correct path.</p>
+           </li>
+           <li><strong>Run the Script:</strong>
+                <p>Execute the Python script or Jupyter Notebook containing the project code.</p>
+            </li>
+            <li><strong>Analyze the Output:</strong>
+                <p>Review the output on the console which will contain model performance metrics and the Excel file containing the predicted results from random generated data</p>
             </li>
         </ol>
     </div>
     
-      <div class="section sectors-container">
+    <div class="section sectors-container">
         <h3>In Which Sector is it Used</h3>
         <ul>
             <li>
-               <strong>Banking and Finance:</strong> For detecting and preventing credit card fraud to minimize financial losses.
-            </li>
-            <li>
-              <strong>E-commerce Platforms:</strong> To protect online transactions and customer accounts from fraudulent activity.
-            </li>
-              <li>
-                 <strong>Payment Processing Companies:</strong> To analyze transaction patterns and identify fraudulent behavior in real time.
+                <strong>Banking and Finance:</strong> To detect and prevent credit card fraud and minimize financial risks.
+             </li>
+             <li>
+                 <strong>E-commerce Platforms:</strong> To protect online transactions and customer accounts.
+             </li>
+             <li>
+                <strong>Payment Processing Companies:</strong> To identify fraudulent patterns and behavior in real-time.
               </li>
-               <li>
-                 <strong>Risk Management:</strong> To develop robust risk assessment frameworks and strategies.
-                </li>
-                <li>
-                   <strong>Cybersecurity:</strong> For data scientists working to protect and secure user data and systems.
-                 </li>
-                 <li>
-                    <strong>Regulatory Bodies:</strong> To ensure compliance with financial regulations and security standards.
-                 </li>
+              <li>
+                 <strong>Risk Management:</strong> To develop strategies for better risk assessment and fraud prevention.
+              </li>
+              <li>
+                <strong>Cybersecurity:</strong> For data scientists to safeguard sensitive information.
+              </li>
+             <li>
+               <strong>Regulatory Bodies:</strong> To ensure compliance with financial security standards.
+             </li>
         </ul>
     </div>
     
-      <div class="summary-container">
-       <p>This project highlights the critical application of machine learning in fraud detection, demonstrating how data analysis, preprocessing, and model training can be combined to create a system that prevents financial crimes. </p>
+       <div class="summary-container">
+       <p>This project effectively applies machine learning techniques to address the challenge of credit card fraud, providing a reliable method for detecting fraudulent transactions and minimizing potential financial losses.</p>
    </div>
 </body>
 </html>
