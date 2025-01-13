@@ -5,101 +5,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket Management System</title>
     <style>
-        body {
+          body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
+             background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+             color: #2c3e50;
+            text-align: center;
         }
         h1 {
-            color: #333;
-            text-align: center;
-            border-bottom: 2px solid #333;
+            border-bottom: 2px solid #2c3e50;
             padding-bottom: 10px;
         }
+
         h2 {
-            color: #333;
             border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+             padding-bottom: 5px;
+            margin-top: 25px;
         }
+        .section {
+            background-color: #fff;
+             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            
+        }
+         p {
+          margin: 10px 0;
+           line-height: 1.7;
+          }
         ul {
             list-style-type: disc;
             margin-left: 20px;
+            padding-left: 20px;
         }
+          ul ul {
+        list-style-type: circle; /* Style for nested lists */
+        margin-left: 20px; /* Adjust as needed */
+    }
         li {
-            margin-bottom: 5px;
-        }
-        .section {
-            margin-bottom: 20px;
+            margin-bottom: 8px;
+             
         }
          .uses-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            margin: 20px 0;
+             margin: 20px 0;
             justify-content: center;
-         }
-        .use-box {
-             background-color: #f0f8ff; /*light blue */
-             padding: 15px;
-            border: 1px solid #ddd;
-             border-radius: 8px;
-            width: calc(25% - 40px); /* 4 boxes per row, adjust width as needed */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* slight shadow for depth */
-             text-align: center;
         }
+         .use-box {
+             background-color: #e0f7fa; /*light blue */
+             padding: 15px;
+            border: 1px solid #b2ebf2;
+             border-radius: 8px;
+            width: calc(22% - 40px); /* Adjusted width for 4 boxes per row with some margin*/
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+         }
+          .use-box:hover {
+        transform: scale(1.05); /* slight scale up on hover */
+    }
         .use-box::before {
           content: '✅';
           display: block;
           font-size: 24px;
            margin-bottom: 8px;
         }
+           .summary-container{
+             background-color: #dff0d8; /* Light green background */
+           padding: 20px;
+             border: 1px solid #d0e9c6;
+            border-radius: 8px;
+             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+             margin-top: 20px;
+              text-align: center;
+              
+        }
+           .summary-container p{
+            font-weight: bold;
+            color: #3c763d;
+            line-height: 1.8;
+        }
+         .tech-details-container{
+            margin: 20px 0;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+          .tech-details-container h3 {
+        color: #34495e; /* Darker color for heading */
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+    }
+    .tech-details-container ul {
+        list-style-type: none;
+        padding-left: 0;
+         }
+    .tech-details-container ul li{
+        margin-bottom: 10px;
+         padding: 10px;
+        background-color: #fff;
+        border: 1px solid #eee;
+       border-radius: 5px;
+         box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+      .instructions-container{
+           margin: 20px 0;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 20px;
+             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+      .instructions-container h3 {
+         color: #34495e; /* Darker color for heading */
+          border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+      }
+     .instructions-container ol {
+          margin-left: 20px;
+            padding-left: 20px;
+        }
+        .instructions-container ol li{
+            margin-bottom: 10px;
+              line-height: 1.8;
+        }
+          .sectors-container{
+           margin: 20px 0;
+            background-color: #f8f8f8;
+             border: 1px solid #ddd;
+             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+          .sectors-container h3 {
+         color: #34495e; /* Darker color for heading */
+          border-bottom: 1px solid #ddd;
+           padding-bottom: 5px;
+          }
+       .sectors-container ul {
+         list-style-type: none;
+          padding-left: 0;
+         }
+        .sectors-container ul li{
+            margin-bottom: 10px;
+          padding: 10px;
+         background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 5px;
+         box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+         }
     </style>
 </head>
 <body>
     <div class="section">
         <h1>Ticket Management System</h1>
-        <p>This project implements a basic Ticket Management System using Python, Pandas, and SQLite. The system allows users to log new tickets, view ticket status, resolve tickets, and analyze ticket data. It interacts with an SQLite database to store and retrieve ticket information.</p>
+        <h2>Project Overview</h2>
+        <p>This project implements a basic Ticket Management System using Python, Pandas, and SQLite. The system allows users to log new tickets, view ticket status, resolve tickets, and analyze ticket data. It interacts with an SQLite database to store and retrieve ticket information.
+         </p>
     </div>
-    <div class="section">
-        <h2>Project Description</h2>
-        <p>The Ticket Management System is designed to handle a basic workflow for tracking and managing tickets. It utilizes an SQLite database to persist ticket data, including Case IDs, Activity IDs, and Timestamps. The core functionality includes logging new tickets, viewing ticket details based on Case ID, resolving existing tickets by updating their Activity ID, and performing basic analysis by grouping tickets by Activity ID to count tickets.</p>
-    </div>
-    <div class="section">
-        <h2>Key steps and Features</h2>
-         <ul>
-            <li><strong>Database Setup:</strong> Uses `sqlalchemy` to connect to and manage an SQLite database.</li>
-            <li><strong>Data Loading:</strong> Reads ticket data from a CSV file (`helpdesk.csv`) using pandas.</li>
-            <li><strong>Data Storage:</strong> Loads the data into the SQL database.</li>
-            <li><strong>Logging Tickets:</strong> Implements a function to log new tickets with `CaseID`, `ActivityID`, and `CompleteTimestamp` into the database.</li>
-            <li><strong>Viewing Tickets:</strong> Allows users to view tickets by their `CaseID`.</li>
-            <li><strong>Resolving Tickets:</strong> Implements a function to update the `ActivityID` of a ticket to 6, marking it as resolved.</li>
-             <li><strong>Ticket Analysis:</strong> Provides functionality to perform analysis to count number of ticket by `ActivityID`.</li>
-             <li><strong>Interactive Interface:</strong> A command-line menu interface provides options for logging, viewing, resolving, analyzing tickets and exiting the system</li>
-        </ul>
-    </div>
+
      <div class="section">
-        <h2>How to Use</h2>
-         <p>To interact with the Ticket Management System, follow these steps:</p>
-         <ol>
-            <li>Run the Python script containing the provided code.</li>
-            <li>A menu will be displayed with options to log a ticket, view ticket status, resolve a ticket, analyze tickets, or exit.</li>
-             <li>Select an option by entering the corresponding number.</li>
-             <li>Follow the prompts to input required information, such as Case ID, Activity ID, and timestamps, if prompted.</li>
-            <li>View the ticket information and analysis on the console.</li>
-         </ol>
-     </div>
-    <div class="section">
-       <h2>Where It's Useful</h2>
-       <p>This Ticket Management System can be useful in various sectors and applications:</p>
+        <h2>Core Functionalities</h2>
         <ul>
-            <li><strong>Customer Support:</strong> Tracking and managing customer support tickets.</li>
-           <li><strong>IT Helpdesk:</strong> Managing and resolving IT-related issues.</li>
-           <li><strong>Project Management:</strong> Tracking project tasks as tickets.</li>
-            <li><strong>Issue Tracking:</strong> Managing bugs or feature requests in software development.</li>
-           <li><strong>Service Management:</strong> Tracking service requests and resolving incidents.</li>
-            <li><strong>Small Teams:</strong> Ideal for small teams or organizations that need basic ticket management without complex features.</li>
+            <li><strong>Database Setup:</strong>
+                <ul>
+                   <li>Uses `sqlalchemy` to connect to and manage an SQLite database.</li>
+                </ul>
+            </li>
+            <li><strong>Data Loading and Storage:</strong>
+                <ul>
+                    <li>Reads ticket data from a CSV file (`helpdesk.csv`) using pandas.</li>
+                    <li>Loads the data into the SQL database.</li>
+                 </ul>
+           </li>
+           <li><strong>Ticket Management:</strong>
+                <ul>
+                   <li>Implements a function to log new tickets with `CaseID`, `ActivityID`, and `CompleteTimestamp` into the database.</li>
+                    <li>Allows users to view tickets by their `CaseID`.</li>
+                   <li>Implements a function to update the `ActivityID` of a ticket to 6, marking it as resolved.</li>
+                 </ul>
+            </li>
+           <li><strong>Data Analysis:</strong>
+              <ul>
+                  <li>Provides functionality to perform analysis to count number of ticket by `ActivityID`.</li>
+               </ul>
+            </li>
+              <li><strong>Interactive Interface:</strong>
+              <ul>
+                   <li>A command-line menu interface provides options for logging, viewing, resolving, analyzing tickets and exiting the system</li>
+               </ul>
+            </li>
         </ul>
     </div>
+
      <div class="section">
         <h2>Uses</h2>
         <div class="uses-container">
@@ -112,7 +219,80 @@
             <div class="use-box">Python Programming</div>
             <div class="use-box">SQL Queries</div>
               <div class="use-box">Issue Management</div>
-        </div>
+         </div>
     </div>
+
+    <div class="section tech-details-container">
+        <h3>Technical Details</h3>
+        <ul>
+            <li>
+                <strong>Programming Language:</strong> Python 3.11.
+            </li>
+            <li>
+                <strong>Libraries/Modules Used:</strong>
+               <ul>
+                 <li><code>pandas</code>: Used for data manipulation and analysis.</li>
+                 <li><code>sqlalchemy</code>: Used for database connection and management.</li>
+                  <li><code>sqlite</code>: Used for database storage</li>
+                </ul>
+            </li>
+            <li>
+                 <strong>Data Storage:</strong> CSV (`helpdesk.csv`), SQLite database.
+             </li>
+              <li>
+                <strong>Output:</strong> Console output providing ticket information and analysis.
+            </li>
+        </ul>
+    </div>
+
+     <div class="section instructions-container">
+        <h3>How to Use</h3>
+        <ol>
+             <li><strong>Prepare the Data:</strong>
+               <p>Ensure the CSV data file (`helpdesk.csv`) is in the same directory as your Python script or provide the correct file path.</p>
+            </li>
+            <li><strong>Run the Script:</strong>
+               <p>Execute the Python script or Jupyter Notebook containing the provided code.</p>
+            </li>
+            <li><strong>Interact with Menu:</strong>
+                <p>A menu will be displayed with options to log a ticket, view ticket status, resolve a ticket, analyze tickets, or exit. Select an option by entering the corresponding number.</p>
+            </li>
+             <li><strong>Follow the prompts:</strong>
+                <p>Follow the prompts to input required information, such as Case ID, Activity ID, and timestamps, if prompted.</p>
+             </li>
+              <li><strong>Review the Output:</strong>
+                 <p>View the ticket information and analysis on the console.</p>
+            </li>
+        </ol>
+    </div>
+    
+      <div class="section sectors-container">
+        <h3>In Which Sector is it Used</h3>
+        <ul>
+            <li>
+              <strong>Customer Support:</strong> Tracking and managing customer support tickets.
+             </li>
+             <li>
+              <strong>IT Helpdesk:</strong> Managing and resolving IT-related issues.
+             </li>
+             <li>
+              <strong>Project Management:</strong> Tracking project tasks as tickets.
+             </li>
+              <li>
+                  <strong>Issue Tracking:</strong> Managing bugs or feature requests in software development.
+               </li>
+               <li>
+                <strong>Service Management:</strong> Tracking service requests and resolving incidents.
+               </li>
+               <li>
+                   <strong>Small Teams:</strong> Ideal for small teams or organizations that need basic ticket management without complex features.
+                </li>
+        </ul>
+    </div>
+
+      <div class="summary-container">
+       <p>This project showcases a practical approach to ticket management, integrating database operations, data handling, and interactive user experience. It provides a foundation for building more complex ticket management systems.</p>
+   </div>
+
 </body>
 </html>
