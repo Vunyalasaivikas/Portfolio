@@ -5,99 +5,280 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL Capstone Project</title>
     <style>
-        body {
+          body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
+             background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+             color: #2c3e50;
+            text-align: center;
         }
         h1 {
-            color: #333;
-            text-align: center;
-            border-bottom: 2px solid #333;
+            border-bottom: 2px solid #2c3e50;
             padding-bottom: 10px;
         }
+
         h2 {
-            color: #333;
             border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+             padding-bottom: 5px;
+            margin-top: 25px;
         }
+        .section {
+            background-color: #fff;
+             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            
+        }
+         p {
+          margin: 10px 0;
+           line-height: 1.7;
+          }
         ul {
             list-style-type: disc;
             margin-left: 20px;
+            padding-left: 20px;
         }
+          ul ul {
+        list-style-type: circle; /* Style for nested lists */
+        margin-left: 20px; /* Adjust as needed */
+    }
         li {
-            margin-bottom: 5px;
-        }
-        .section {
-            margin-bottom: 20px;
+            margin-bottom: 8px;
+             
         }
          .uses-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            margin: 20px 0;
+             margin: 20px 0;
             justify-content: center;
-         }
-        .use-box {
-             background-color: #f0f8ff; /*light blue */
-             padding: 15px;
-            border: 1px solid #ddd;
-             border-radius: 8px;
-            width: calc(25% - 40px); /* 4 boxes per row, adjust width as needed */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* slight shadow for depth */
-             text-align: center;
         }
-         .use-box::before {
+         .use-box {
+             background-color: #e0f7fa; /*light blue */
+             padding: 15px;
+            border: 1px solid #b2ebf2;
+             border-radius: 8px;
+            width: calc(22% - 40px); /* Adjusted width for 4 boxes per row with some margin*/
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+         }
+          .use-box:hover {
+        transform: scale(1.05); /* slight scale up on hover */
+    }
+        .use-box::before {
           content: '✅';
           display: block;
           font-size: 24px;
            margin-bottom: 8px;
         }
+           .summary-container{
+             background-color: #dff0d8; /* Light green background */
+           padding: 20px;
+             border: 1px solid #d0e9c6;
+            border-radius: 8px;
+             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+             margin-top: 20px;
+              text-align: center;
+              
+        }
+           .summary-container p{
+            font-weight: bold;
+            color: #3c763d;
+            line-height: 1.8;
+        }
+         .tech-details-container{
+            margin: 20px 0;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+          .tech-details-container h3 {
+        color: #34495e; /* Darker color for heading */
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+    }
+    .tech-details-container ul {
+        list-style-type: none;
+        padding-left: 0;
+         }
+    .tech-details-container ul li{
+        margin-bottom: 10px;
+         padding: 10px;
+        background-color: #fff;
+        border: 1px solid #eee;
+       border-radius: 5px;
+         box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+      .instructions-container{
+           margin: 20px 0;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 20px;
+             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+      .instructions-container h3 {
+         color: #34495e; /* Darker color for heading */
+          border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+      }
+     .instructions-container ol {
+          margin-left: 20px;
+            padding-left: 20px;
+        }
+        .instructions-container ol li{
+            margin-bottom: 10px;
+              line-height: 1.8;
+        }
+          .sectors-container{
+           margin: 20px 0;
+            background-color: #f8f8f8;
+             border: 1px solid #ddd;
+             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+          .sectors-container h3 {
+         color: #34495e; /* Darker color for heading */
+          border-bottom: 1px solid #ddd;
+           padding-bottom: 5px;
+          }
+       .sectors-container ul {
+         list-style-type: none;
+          padding-left: 0;
+         }
+        .sectors-container ul li{
+            margin-bottom: 10px;
+          padding: 10px;
+         background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 5px;
+         box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+         }
     </style>
 </head>
 <body>
     <div class="section">
         <h1>SQL Capstone Project</h1>
-        <p>This project involves performing various analytical queries on NFT sales data using SQL. The data includes information about CryptoPunk sales, such as sale prices, dates, buyer addresses, and seller addresses. The goal was to extract meaningful insights from this data using complex SQL queries.</p>
+         <h2>Project Overview</h2>
+        <p>This project involves performing various analytical queries on NFT sales data using SQL. The data includes information about CryptoPunk sales, such as sale prices, dates, buyer addresses, and seller addresses. The goal was to extract meaningful insights from this data using complex SQL queries.
+        </p>
     </div>
-    <div class="section">
-        <h2>Project Description</h2>
-            <p>The dataset utilized in this project pertains to CryptoPunk NFT sales, encompassing details such as transaction dates, prices in both ETH and USD, as well as the addresses of both buyers and sellers. The primary objective was to leverage SQL for in-depth analysis, thereby extracting significant patterns and business-oriented insights.</p>
-           
-    </div>
-    <div class="section">
-        <h2>Key Queries and Insights</h2>
-        <ul>
-           <li><strong>Total Sales Count:</strong> Determined the total number of sales within a specified date range.</li>
-            <li><strong>Top 5 Transactions:</strong> Identified the top 5 most expensive transactions based on USD price, and also extracted the name, ETH price, USD price and date of the transactions</li>
-            <li><strong>Moving Average Price:</strong> Calculated the moving average of USD price over the last 50 transactions which provided trend analysis on the price changes.</li>
-            <li><strong>Average Sale Price by NFT:</strong> Determined each NFT's average sales price, sorted in descending order, highlighting the top-performing NFTs.</li>
-            <li><strong>Sales by Day of the Week:</strong> Provided analysis of sales by each day of the week and their average price in ETH, ordered by the number of transactions.</li>
-            <li><strong>Transaction Summary:</strong> Constructed a descriptive summary of each transaction with all the relevant details such as name of the NFT, buyer, seller, date and the price.</li>
-            <li><strong>View Creation:</strong> Created a database view “1919_purchases” to filter the sales from a given address.</li>
-            <li><strong>ETH Price Histogram:</strong> Categorized ETH price ranges, creating a histogram to illustrate price frequency.</li>
-            <li><strong>High and Low Sale Prices:</strong> Generated a unified query that shows the highest and lowest purchase prices for each NFT.</li>
-           <li><strong>Monthly Top NFT Sales:</strong> Determined the NFT with the highest sales count and the maximum sale price for a given month and year.</li>
-            <li><strong>Monthly Total Volume:</strong>  Calculated the total sales volume on a monthly basis.</li>
-           <li><strong>Wallet Transaction Count:</strong> Determined number of sales made by a given wallet address as a buyer, seller and total transactions.</li>
-           <li><strong>Estimated Average Value Calculation:</strong> Built a robust value calculator that filters out outliers in daily sales and calculates a representative average price.</li>
-           <li><strong>Wallet Profitability:</strong> Determined the overall profitability (or loss) of each wallet, ordered by the most profitable.</li>
 
+     <div class="section">
+        <h2>Core Functionalities</h2>
+        <ul>
+             <li><strong>Data Analysis:</strong>
+                <ul>
+                   <li>Performs in depth analysis of NFT sales data using SQL.</li>
+                     <li>Extracts meaningful patterns and business-oriented insights.</li>
+                </ul>
+            </li>
+            <li><strong>Analytical Queries:</strong>
+                <ul>
+                    <li>Determines the total number of sales within a specified date range.</li>
+                      <li>Identifies the top 5 most expensive transactions based on USD price.</li>
+                      <li>Calculates the moving average of USD price over the last 50 transactions.</li>
+                      <li>Determines each NFT's average sales price, sorted in descending order.</li>
+                      <li>Provides analysis of sales by each day of the week and their average price in ETH, ordered by the number of transactions.</li>
+                     <li>Constructs a descriptive summary of each transaction with all the relevant details.</li>
+                      </ul>
+           </li>
+           <li><strong>Advanced SQL Features:</strong>
+              <ul>
+                  <li>Creates a database view to filter the sales from a given address.</li>
+                  <li>Categorizes ETH price ranges, creating a histogram to illustrate price frequency.</li>
+                   <li>Generates a unified query that shows the highest and lowest purchase prices for each NFT.</li>
+                     <li>Determines the NFT with the highest sales count and the maximum sale price for a given month and year.</li>
+                    <li>Calculates the total sales volume on a monthly basis.</li>
+                   <li>Determines number of sales made by a given wallet address as a buyer, seller and total transactions.</li>
+                  <li>Builds a robust value calculator that filters out outliers in daily sales and calculates a representative average price.</li>
+                  <li>Determines the overall profitability (or loss) of each wallet, ordered by the most profitable.</li>
+               </ul>
+            </li>
         </ul>
     </div>
-   <div class="section">
+
+    <div class="section">
         <h2>Uses</h2>
         <div class="uses-container">
             <div class="use-box">Data Analysis</div>
-            <div class="use-box">SQL Proficiency</div>
+             <div class="use-box">SQL Proficiency</div>
              <div class="use-box">Data Filtering</div>
              <div class="use-box">Transaction Analysis</div>
-            <div class="use-box">Insight Generation</div>
-             <div class="use-box">Data Visualization</div>
-             <div class="use-box">Data Aggregation</div>
-            <div class="use-box">Complex Queries</div>
-             <div class="use-box">Data View Creation</div>
+             <div class="use-box">Insight Generation</div>
+              <div class="use-box">Data Aggregation</div>
+              <div class="use-box">Data View Creation</div>
+               <div class="use-box">Complex Queries</div>
+             <div class="use-box">Database Queries</div>
         </div>
     </div>
+
+   <div class="section tech-details-container">
+        <h3>Technical Details</h3>
+        <ul>
+            <li>
+                <strong>Programming Language:</strong> SQL.
+            </li>
+            <li>
+                <strong>Database:</strong> SQLite or other SQL database
+            </li>
+             <li>
+                <strong>Data Storage:</strong> CSV (`cryptopunks.csv`)
+            </li>
+            <li>
+                 <strong>Output:</strong> Query results and data insights.
+             </li>
+        </ul>
+    </div>
+
+     <div class="section instructions-container">
+        <h3>How to Use</h3>
+        <ol>
+             <li><strong>Prepare the Data:</strong>
+               <p>Ensure the CSV data file (`cryptopunks.csv`) is loaded into SQL database.</p>
+            </li>
+            <li><strong>Execute the SQL Script:</strong>
+               <p>Execute the SQL script or code containing the queries. You can use an SQL client or other tool.</p>
+             </li>
+             <li><strong>Analyze Results:</strong>
+                <p>Examine the output generated from the SQL queries, which would provide information and insights about the NFT sales data.</p>
+            </li>
+        </ol>
+    </div>
+    
+       <div class="section sectors-container">
+        <h3>In Which Sector is it Used</h3>
+        <ul>
+            <li>
+               <strong>Financial Analysis:</strong> For analyzing financial trends, transaction data and investment patterns in the NFT space.
+            </li>
+            <li>
+              <strong>Blockchain Research:</strong> Useful for researchers to understand the market and transaction behaviour on the blockchain
+            </li>
+              <li>
+                 <strong>Data Analytics:</strong> For data scientists to perform advanced analysis and generate insights from complex datasets
+              </li>
+              <li>
+                <strong>Market Research:</strong> Helps in analyzing market trends for NFTs, and buyer/seller behaviors
+             </li>
+              <li>
+                <strong>NFT Trading:</strong> Useful for NFT traders to find profitable trading strategies and also identify high potential NFTs
+             </li>
+        </ul>
+    </div>
+
+      <div class="summary-container">
+       <p>This project demonstrates the application of SQL in analyzing large datasets and producing business-oriented insights. The project also illustrates different SQL functionalities and their applications in analyzing real world datasets.</p>
+   </div>
+
 </body>
 </html>
